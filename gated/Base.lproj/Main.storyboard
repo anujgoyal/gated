@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AWh-0a-fCb">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Gated View Controller-->
@@ -16,8 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="118" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="QAd-fk-a5H">
-                                <rect key="frame" x="2" y="0.0" width="600" height="600"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="118" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="QAd-fk-a5H">
+                                <rect key="frame" x="0.0" y="0.0" width="602" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GatedCell" rowHeight="120" id="hZa-ck-xJE" customClass="GatedCell" customModule="gated" customModuleProvider="target">
@@ -34,11 +35,20 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="MrW-b2-wDW" id="0r6-q5-mvN"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="QAd-fk-a5H" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="9rg-v2-Az5"/>
+                            <constraint firstItem="QAd-fk-a5H" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="Rfo-lm-BPx"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="QAd-fk-a5H" secondAttribute="bottom" id="rwg-pb-6py"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="QAd-fk-a5H" secondAttribute="trailing" constant="-18" id="xop-6d-sva"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="wFP-UH-r7R"/>
                     <connections>
@@ -48,6 +58,77 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1125" y="382"/>
+        </scene>
+        <!--Gated Detail View Controller-->
+        <scene sceneID="09e-wS-EDk">
+            <objects>
+                <viewController storyboardIdentifier="GatedDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HRX-JQ-Kpz" customClass="GatedDetailViewController" customModule="gated" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3Ig-LT-AIc"/>
+                        <viewControllerLayoutGuide type="bottom" id="H0V-BL-SzU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vQC-7B-7zG">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XFO-vu-YJG">
+                                <rect key="frame" x="0.0" y="50" width="600" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="t98-uH-uOx"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Meg Whitman" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VnH-x3-4RH">
+                                <rect key="frame" x="32" y="275" width="536" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="CEO" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebf-5x-fVn">
+                                <rect key="frame" x="32" y="315" width="536" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Hewlett-Packard" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pJ9-gM-Drn">
+                                <rect key="frame" x="32" y="337" width="568" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="lots of text about the person..." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KNV-CH-3DH">
+                                <rect key="frame" x="32" y="376" width="552" height="204"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="H0V-BL-SzU" firstAttribute="top" secondItem="KNV-CH-3DH" secondAttribute="bottom" constant="16" id="7an-22-VDK"/>
+                            <constraint firstItem="XFO-vu-YJG" firstAttribute="top" secondItem="vQC-7B-7zG" secondAttribute="topMargin" constant="50" id="BQ8-ld-K5a"/>
+                            <constraint firstItem="VnH-x3-4RH" firstAttribute="top" secondItem="XFO-vu-YJG" secondAttribute="bottom" constant="25" id="CDz-JJ-qaU"/>
+                            <constraint firstItem="VnH-x3-4RH" firstAttribute="leading" secondItem="vQC-7B-7zG" secondAttribute="leadingMargin" constant="16" id="IzW-hi-59Z"/>
+                            <constraint firstItem="KNV-CH-3DH" firstAttribute="trailing" secondItem="vQC-7B-7zG" secondAttribute="trailingMargin" constant="16" id="JuZ-AU-cIS"/>
+                            <constraint firstItem="pJ9-gM-Drn" firstAttribute="trailing" secondItem="vQC-7B-7zG" secondAttribute="trailingMargin" constant="16" id="PCT-BT-wyv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ebf-5x-fVn" secondAttribute="trailing" constant="16" id="Px8-sW-437"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="VnH-x3-4RH" secondAttribute="trailing" constant="16" id="Wa5-9K-7ik"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="XFO-vu-YJG" secondAttribute="trailing" constant="-16" id="Wip-3b-OSh"/>
+                            <constraint firstItem="pJ9-gM-Drn" firstAttribute="leading" secondItem="vQC-7B-7zG" secondAttribute="leadingMargin" constant="16" id="ZtF-KO-WxM"/>
+                            <constraint firstItem="KNV-CH-3DH" firstAttribute="leading" secondItem="vQC-7B-7zG" secondAttribute="leadingMargin" constant="16" id="Zyi-Ir-0uO"/>
+                            <constraint firstItem="KNV-CH-3DH" firstAttribute="top" secondItem="pJ9-gM-Drn" secondAttribute="bottom" constant="18" id="cXs-WU-Isp"/>
+                            <constraint firstItem="ebf-5x-fVn" firstAttribute="top" secondItem="VnH-x3-4RH" secondAttribute="bottom" constant="8" id="eKd-qC-1SU"/>
+                            <constraint firstItem="ebf-5x-fVn" firstAttribute="leading" secondItem="vQC-7B-7zG" secondAttribute="leadingMargin" constant="16" id="eVu-LS-7fB"/>
+                            <constraint firstItem="XFO-vu-YJG" firstAttribute="leading" secondItem="vQC-7B-7zG" secondAttribute="leadingMargin" constant="-16" id="obx-VH-JkO"/>
+                            <constraint firstItem="pJ9-gM-Drn" firstAttribute="top" secondItem="ebf-5x-fVn" secondAttribute="bottom" constant="1" id="uHs-rm-zsT"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="XFO-vu-YJG" id="Sf4-Rr-EEY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="njZ-Dq-8IL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1123" y="1088"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Mjs-hY-Xh9">
